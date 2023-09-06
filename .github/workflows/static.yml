@@ -20,9 +20,9 @@ jobs:
         run: |
           if [ -n "$GITHUB_REF" ]; then
             if [ "$GITHUB_REF" == "refs/heads/develop" ]; then
-              aws s3 sync index.html s3://dev-onion.halykmart.live
+              aws s3 sync index.html s3://dev-onion.halykmart.live/index.html
             elif [ "$GITHUB_REF" == "refs/tags/${{ github.event.release.tag_name }}" ]; then
-              aws s3 sync index.html s3://onion.halykmart.live
+              aws s3 sync index.html s3://onion.halykmart.live/index.html
             fi
           fi
         env:
