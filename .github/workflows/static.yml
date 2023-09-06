@@ -1,4 +1,4 @@
-name: S3 Deployment
+name: Auto-deploy index.html to Onion Domains
 
 on:
   push:
@@ -16,16 +16,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Deploy to S3
+      - name: Set Domain
+        id: set_domain
         run: |
-          if [ -n "$GITHUB_REF_NAME" ]; then
-            if [ "$GITHUB_REF_NAME" == "refs/heads/develop" ]; then
-              aws s3 sync ./index.html s3://dev-onion.halykmart.live
-            elif [ "$GITHUB_REF_NAME" == "refs/tags/${{ github.event.release.tag_name }}" ]; then
-              aws s3 sync ./index.html s3://onion.halykmart.live
-            fi
+          if [[ $GITHUB_REF == "refs/heads/develop" ]]; then
+            DEPLOY_DOMAIN="dev-onion.halykmart.live"
+          elif [[ $GITHUB_REF == "refs/tags/"* ]]; then
+            DEPLOY_DOMAIN="onion.halykmart.live"
+          else
+            echo "Invalid branch/tag for deployment"
+            exit 1
           fi
+          echo "DEPLOY_DOMAIN=$DEPLOY_DOMAIN" >> $GITHUB_ENV
+
+      - name: Deploy index.html
         env:
           AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+          aws s3 cp index.html s3://${{ env.DEPLOY_DOMAIN }}/index.html
