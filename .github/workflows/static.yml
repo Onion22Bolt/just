@@ -18,11 +18,11 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          if [ -n "$GITHUB_REF_NAME" ]; then
-            if [ "$GITHUB_REF_NAME" == "refs/heads/develop" ]; then
-              aws s3 sync index.html s3://onion.halykmart.live/index.html
-            elif [ "$GITHUB_REF_NAME" == "refs/tags/${{ github.event.release.tag_name }}" ]; then
-              aws s3 sync index.html s3://onion.halykmart.live/index.html
+          if [ -n "$GITHUB_REF" ]; then
+            if [ "$GITHUB_REF" == "refs/heads/develop" ]; then
+              aws s3 sync index.html s3://dev-onion.halykmart.live
+            elif [ "$GITHUB_REF" == "refs/tags/${{ github.event.release.tag_name }}" ]; then
+              aws s3 sync index.html s3://onion.halykmart.live
             fi
           fi
         env:
