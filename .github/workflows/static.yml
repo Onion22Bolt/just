@@ -1,13 +1,11 @@
-name: Auto-deploy repo to Onion Domain
+name: Auto-deploy repo to S3 bucket
 
 on:
   push:
-    branches:
-      - static
 
 jobs:
   deploy:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
