@@ -30,4 +30,4 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
           aws s3 sync . s3://${{ env.DEPLOY_DOMAIN }} \
-            --exclude "README.md" --exclude ".github/*" --exclude ".gitignore"
+            --exclude "README.md" --exclude ".git*"          
