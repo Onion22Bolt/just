@@ -1,12 +1,9 @@
-name: Auto-deploy index.html to Onion Domains
+name: Auto-deploy repo to Onion Domain
 
 on:
   push:
     branches:
-      - develop
-  release:
-    types:
-      - created
+      - static
 
 jobs:
   deploy:
@@ -19,20 +16,17 @@ jobs:
       - name: Set Domain
         id: set_domain
         run: |
-          if [[ $GITHUB_REF == "refs/heads/develop" ]]; then
-            DEPLOY_DOMAIN="dev-onion.halykmart.live"
-          elif [[ $GITHUB_REF == "refs/tags/"* ]]; then
+          if [[ $GITHUB_REF == "refs/heads/static" ]]; then
             DEPLOY_DOMAIN="onion.halykmart.live"
           else
-            echo "Invalid branch/tag for deployment"
+            echo "Invalid branch for deployment"
             exit 1
           fi
           echo "DEPLOY_DOMAIN=$DEPLOY_DOMAIN" >> $GITHUB_ENV
 
-      - name: Deploy index.html
+      - name: Deploy 
         env:
-          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
-          aws s3 cp index.html s3://${{ env.DEPLOY_DOMAIN }}/index.html
+          aws s3 sync s3://${{ env.DEPLOY_DOMAIN }}

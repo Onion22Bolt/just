@@ -1,0 +1,400 @@
+:root {
+  --dark-bg-color: #232f3e;
+  --light-bg-color: #eeeeee;
+  --primary-color: #f79808;
+  --width-speaker: "300px";
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  font-size: 10px;
+}
+
+h1 {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "JetBrains Mono", Tahoma, sans-serif;
+  box-sizing: border-box;
+  color: white;
+  background-color: var(--dark-bg-color);
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+}
+
+main {
+  display: block;
+}
+
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+.container {
+  max-width: 1100px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+#header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  height: 60px;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.header-scrolled {
+  background: var(--dark-bg-color);
+  border-bottom: 1px solid var(--primary-color);
+  transition: all 0.5s;
+}
+
+.navbar {
+  overflow: hidden;
+  margin-left: auto;
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li a {
+  display: block;
+  color: rgba(202, 206, 221, 0.8);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar li a:hover,
+.navbar li a:active {
+  color: white;
+}
+
+.logo {
+  margin-top: 5px;
+}
+
+.burger-menu {
+  display: none;
+  cursor: pointer;
+}
+
+#intro {
+  height: 100vh;
+  background-attachment: fixed;
+  background-image: url("./assets/img/intro_bg.png");
+  background-size: cover;
+  overflow: hidden;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.info-description {
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  background-color: var(--primary-color);
+  cursor: pointer;
+  border-radius: 6px;
+}
+.btn:hover {
+  background-color: #ee9002;
+}
+
+.registration {
+  margin: 20px;
+  font-size: 3rem;
+  padding: 20px;
+}
+
+.registration__disable {
+  background-color: #f1bd70;
+  cursor: default;
+}
+.registration__disable:hover {
+  background-color: #f1bd70;
+}
+
+.section {
+  padding: 50px 0 40px;
+}
+
+.section_light {
+  background-color: var(--light-bg-color);
+  color: #232f3e;
+}
+
+.section-title {
+  font-size: 3rem;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 10px 0 30px 0;
+  color: transparent;
+  background-image: linear-gradient(0.253turn, #fbc036 0%, #d88200 100%);
+  -webkit-background-clip: text;
+  will-change: transform;
+  line-height: 1.25;
+  background-position: center center;
+  border-color: transparent;
+  border-style: solid;
+  width: fit-content;
+}
+
+.cloud {
+  background-image: url("./assets/img/cloude_bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  height: 120px;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+}
+
+.flex-wrap-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 40px;
+}
+
+.speaker {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.speaker-img {
+  width: 255px;
+  height: 255px;
+  border-radius: 50%;
+  overflow: hidden;
+  user-select: none;
+}
+
+.speaker-info {
+  color: #9195a2;
+  margin-top: 18px;
+}
+
+.speaker-info > p {
+  padding: 0;
+  margin: 0;
+}
+
+.speaker-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  text-decoration: none;
+  color: #232f3e;
+  margin-bottom: 12px;
+}
+
+.speaker-title > span {
+  color: var(--primary-color);
+}
+
+#location {
+  padding-bottom: 0;
+}
+
+.location-container {
+  display: flex;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.location-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  margin-left: 40px;
+}
+
+.call-for-sponsors {
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-top: 60px;
+  max-width: 500px;
+}
+
+.section_light .call-for-sponsors {
+  color: #232f3e;
+}
+
+.members-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.member {
+  display: flex;
+  width: 500px;
+}
+
+.member-img {
+  flex-shrink: 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  user-select: none;
+  margin-right: 20px;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  object-fit: contain;
+}
+
+.member-info {
+  color: #9195a2;
+  margin-top: 18px;
+}
+
+.member-info > p {
+  padding: 0;
+  margin: 0;
+}
+
+.member-title {
+  display: inline-block;
+  font-size: 2.2rem;
+  font-weight: 900;
+  text-decoration: none;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.section_light .member-title {
+  color: #232f3e;
+}
+
+#organizing-team {
+  background-image: url("./assets/img/grid.png");
+  background-repeat: no-repeat;
+}
+
+.copyrigth {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.mb-60 {
+  margin-bottom: 60px;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.mt-100 {
+  margin-top: 100px;
+}
+
+@media screen and (max-width: 768px) {
+  body.lock {
+    overflow: hidden;
+  }
+
+  .header-container {
+    background-color: var(--dark-bg-color);
+    border-bottom: 1px solid var(--primary-color);
+  }
+
+  .burger-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    line-height: 4rem;
+    margin: 0 20px;
+    margin-left: auto;
+    width: 30px;
+    height: 30px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: -130%;
+    left: 0;
+    transition: all 0.3s ease 0s;
+    background-color: var(--dark-bg-color);
+    font-size: 3rem;
+    padding: 20px 0;
+    z-index: -1;
+  }
+
+  .navbar ul.active {
+    top: 62px;
+  }
+
+  .navbar li {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .navbar li a:hover,
+  .navbar li a:active {
+    color: white;
+    background-color: var(--primary-color);
+  }
+
+  .location-container {
+    flex-direction: column;
+  }
+
+  .location-description {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .member {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
