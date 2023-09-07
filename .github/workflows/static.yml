@@ -2,6 +2,8 @@ name: Auto-deploy repo to S3 bucket
 
 on:
   push:
+    branches:
+        - static
 
 jobs:
   deploy:
@@ -10,6 +12,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Install AWS CLI
+        run: |
+          curl "https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip awscliv2.zip
+          sudo ./aws/install
+          aws --version
 
       - name: Set Domain
         id: set_domain
