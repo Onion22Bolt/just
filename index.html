@@ -1,9 +1,33 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hello, World!</title>
+  <title>Frontend Service</title>
 </head>
 <body>
-    <h1>Hello, World!</h1>
+  <h1>Frontend Service</h1>
+  <p>Click the button to fetch backend info:</p>
+  <button id="fetchInfo">Fetch Info</button>
+  <p id="info"></p>
+
+  <script>
+    const fetchInfoButton = document.getElementById('fetchInfo');
+    const infoParagraph = document.getElementById('info');
+
+    fetchInfoButton.addEventListener('click', async () => {
+      try {
+        const response = await fetch('/api/info');
+        if (response.ok) {
+          const data = await response.json();
+          infoParagraph.innerText = `Instance ID: ${data.instanceId}, Public IP: ${data.publicIp}`;
+        } else {
+          infoParagraph.innerText = 'Failed to fetch data from backend';
+        }
+      } catch (error) {
+        console.error(error);
+        infoParagraph.innerText = 'An error occurred';
+      }
+    });
+  </script>
 </body>
 </html>
