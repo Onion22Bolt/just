@@ -1,32 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Frontend Service</title>
+    <title>Frontend Service</title>
+    <style>
+        /* Общие стили */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 600px; /* Максимальная ширина контейнера */
+            margin: 0 auto; /* Центрирование по горизонтали */
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        /* Стили для кнопки */
+        .image-button {
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .image-button:hover {
+            transform: scale(1.05); /* Увеличение изображения при наведении */
+        }
+    </style>
 </head>
 <body>
-  <h1>Frontend Service</h1>
-  <button id="fetchInfo">Fetch Info</button>
-  <p id="info"></p>
-  <img src="https://s3.amazonaws.com/onion.halykmart.live/popcat.jpg" alt="Котик сдох">
-  
-  <script>
-    const fetchInfoButton = document.getElementById('fetchInfo');
-    const infoParagraph = document.getElementById('info');
-
-    fetchInfoButton.addEventListener('click', async () => {
-      try {
-        const response = await fetch('/api/info');
-        if (response.ok) {
-          const data = await response.json();
-          infoParagraph.innerText = `Instance ID: ${data.instanceId}, Public IP: ${data.publicIp}`;
-        } else {
-          infoParagraph.innerText = 'Failed to fetch data from backend';
+    <div class="container">
+        <h1>Welcome to the Popcat!</h1>
+        <p>Feed Popcat and he'll send you a present:</p>
+        <!-- Используйте изображение как кнопку и добавьте атрибут onclick -->
+        <img class="image-button" src="https://s3.amazonaws.com/onion.halykmart.live/popcat.jpg" alt="Котик сдох" onclick="redirectToBackend()">    
+    </div>
+    <script>
+        function redirectToBackend() {
+            // Redirect to your backend service URL
+            window.location.href = 'http://new-alb-1665437489.us-east-1.elb.amazonaws.com:80/';
         }
-      } catch (error) {
-        console.error(error);
-        infoParagraph.innerText = 'An error occurred';
-      }
-    });
-  </script>
+    </script>
 </body>
 </html>
