@@ -3,7 +3,7 @@ os: linux
 
 files:
   - source: scripts/after_install.sh
-    destination: /home/ec2-user/
+    destination: /opt/codedeploy-agent/deployment-root/47315dd5-d2f1-4eae-a0a4-3db8436ebab2/d-EG1L9LST1/deployment-archive/home/ec2-user/
   - source: index.html
     destination: /home/ec2-user/
   - source: requirements.txt
@@ -13,7 +13,7 @@ files:
 
 hooks:
   AfterInstall:
-    - location: /home/ec2-user/after_install.sh
+    - location: /opt/codedeploy-agent/deployment-root/47315dd5-d2f1-4eae-a0a4-3db8436ebab2/d-EG1L9LST1/deployment-archive/home/ec2-user/after_install.sh
       timeout: 300
       runas: root
 
