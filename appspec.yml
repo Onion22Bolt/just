@@ -9,5 +9,6 @@ phases:
         
   deploy_backend:
     commands:
+      - pip install -r requirements.txt
       - echo "Starting the backend service..."
       - python backend.py
