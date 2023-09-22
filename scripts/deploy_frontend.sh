@@ -1,2 +1,3 @@
 #!/bin/bash
-aws s3 cp /home/ec2-user/index.html s3://onion.halykmart.live/index.html
+dist="/home/ec2-user/project"
+aws s3 cp $dist/index.html s3://onion.halykmart.live/index.html
