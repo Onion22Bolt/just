@@ -5,24 +5,28 @@ phases:
   pre-install:
     commands:
       - cd /home/ssm-user
-      
-  install:
+  test:
     commands:
-      - echo "Install repo..."
-      - git clone https://github.com/Onion22Bolt/just.git -b full
+      - touch 1onion1
+      - echo "It's works!" > 2onion2
 
-  pre-deploy:
-    commands:
-      - cd /home/ssm-user/just
+  # install:
+  #   commands:
+  #     - echo "Install repo..."
+  #     - git clone https://github.com/Onion22Bolt/just.git -b full
+
+  # pre-deploy:
+  #   commands:
+  #     - cd /home/ssm-user/just
       
-  deploy_frontend:
-    commands:
-      - echo "Deploy frontend service..."
-      - aws s3 sync . s3://onion.halykmart.live/* \
-        --exclude ".git*" --exclude "README.md" --exclude "*.py" --exclude "*.yml" --exclude "*.txt"
+  # deploy_frontend:
+  #   commands:
+  #     - echo "Deploy frontend service..."
+  #     - aws s3 sync . s3://onion.halykmart.live/* \
+  #       --exclude ".git*" --exclude "README.md" --exclude "*.py" --exclude "*.yml" --exclude "*.txt"
         
-  deploy_backend:
-    commands:
-      - pip install -r requirements.txt
-      - echo "Starting the backend service..."
-      - python backend.py
+  # deploy_backend:
+  #   commands:
+  #     - pip install -r requirements.txt
+  #     - echo "Starting the backend service..."
+  #     - python backend.py
