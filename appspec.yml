@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 
 files:
-  - source: scripts/
+  - source: scripts/after_install.sh
     destination: /home/ec2-user/
   - source: index.html
     destination: /home/ec2-user/
@@ -13,7 +13,7 @@ files:
 
 hooks:
   AfterInstall:
-    - location: /home/ec2-user/scripts/after_install.sh
+    - location: after_install.sh
       timeout: 300
       runas: root
 
