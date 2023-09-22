@@ -3,9 +3,5 @@ version: 0.2
 phases:
   build:
     commands:
-      - echo "Building your backend service..."
-      - pip install -r requirements.txt  
-      - mkdir project
-files:
-  - source: /backend.py
-    destination: /project/backend.py
+      - echo "Install modules and packages..."
+      - pip install -r requirements.txt
