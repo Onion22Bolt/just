@@ -2,8 +2,8 @@ version: 0.0
 os: linux
 
 files:
-  - source: scripts/after_install.sh
-    destination: /opt/codedeploy-agent/deployment-root/47315dd5-d2f1-4eae-a0a4-3db8436ebab2/d-EG1L9LST1/deployment-archive/home/ec2-user/
+  - source: scripts/
+    destination: /home/ec2-user/
   - source: index.html
     destination: /home/ec2-user/
   - source: requirements.txt
@@ -13,16 +13,17 @@ files:
 
 hooks:
   AfterInstall:
-    - location: /opt/codedeploy-agent/deployment-root/47315dd5-d2f1-4eae-a0a4-3db8436ebab2/d-EG1L9LST1/deployment-archive/home/ec2-user/after_install.sh
+    - location: after_install.sh
       timeout: 300
       runas: root
+      permissions: +x
 
-phases:    
+phases:
   deploy_frontend:
     commands:
       - echo "Deploy frontend service..."
       - aws s3 cp /home/ec2-user/index.html s3://onion.halykmart.live/index.html
-      
+
   deploy_backend:
     commands:
       - pip3 install -r /home/ec2-user/requirements.txt
