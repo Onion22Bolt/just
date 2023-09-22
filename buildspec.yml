@@ -7,5 +7,5 @@ phases:
       - pip install -r requirements.txt  
       - mkdir project
 files:
-  - source: /app.py
-    destination: /project/app.py
+  - source: /backend.py
+    destination: /project/backend.py
