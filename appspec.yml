@@ -12,8 +12,8 @@ files:
     destination: /home/ec2-user/
 
 hooks:
-  BeforeInstall:
-    - location: /home/ec2-user/scripts/before_install.sh
+  AfterInstall:
+    - location: /home/ec2-user/scripts/after_install.sh
       timeout: 300
       runas: root
 
