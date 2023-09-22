@@ -13,7 +13,7 @@ files:
 
 hooks:
   AfterInstall:
-    - location: after_install.sh
+    - location: /home/ec2-user/after_install.sh
       timeout: 300
       runas: root
 
