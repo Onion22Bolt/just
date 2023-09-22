@@ -1,0 +1,11 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo "Building your backend service..."
+      - pip install -r requirements.txt  
+      - mkdir project
+files:
+  - source: /app.py
+    destination: /project/app.py
