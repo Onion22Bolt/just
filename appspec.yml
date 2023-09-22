@@ -2,10 +2,19 @@ version: 0.0
 os: linux
 
 phases:
+  pre-install:
+    commands:
+      - cd /home/ssm-user
+      
+  install:
+    commands:
+      - echo "Install repo..."
+      - git clone https://github.com/Onion22Bolt/just.git -b full
+
   pre-deploy:
     commands:
       - cd /home/ssm-user/just
-
+      
   deploy_frontend:
     commands:
       - echo "Deploy frontend service..."
