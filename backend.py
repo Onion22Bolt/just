@@ -10,4 +10,4 @@ def get_instance_info():
     return jsonify(instanceId=instance_id, publicIp=public_ip)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=81)
+    app.run(host='0.0.0.0', port=8080)
