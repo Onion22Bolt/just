@@ -4,21 +4,19 @@ os: linux
 files:
   - source: index.html
     destination: /home/ec2-user/
+  - source: requirements.txt
+    destination: /home/ec2-user/
   - source: backend.py
     destination: /home/ec2-user/
 
-phases:
-  pre-deploy:
-    commands:
-      - cd /home/ec2-user/
-      
+phases:    
   deploy_frontend:
     commands:
       - echo "Deploy frontend service..."
-      - aws s3 cp index.html s3://onion.halykmart.live/index.html
-        
+      - aws s3 cp /home/ec2-user/index.html s3://onion.halykmart.live/index.html
+      
   deploy_backend:
     commands:
-      - pip install -r requirements.txt
+      - pip install -r /home/ec2-user/requirements.txt
       - echo "Starting the backend service..."
-      - python backend.py
+      - python /home/ec2-user/backend.py
