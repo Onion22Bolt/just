@@ -1,9 +1,13 @@
 #!/bin/bash
 dist="/home/ec2-user/project"
 
-python3 -m venv $dist/venv
-source $dist/venv/bin/activate
+cd $dist
 
-pip3 install -r $dist/requirements.txt
+docker stop flask-app || true
+docker rm flask-app || true
 
-python $dist/backend.py
+docker rmi flask-app || true
+
+docker build -t flask-app .
+
+docker run -d -p 8080:8080 --name flask-app flask-app
