@@ -6,71 +6,71 @@
         <mxCell id="1" parent="0" />
 
         <!-- Dev Environment -->
-        <mxCell id="dev" value="Dev" style="rounded=0;whiteSpace=wrap;fontSize=14;fillColor=none;" vertex="1" connectable="0" parent="1">
-          <mxGeometry x="100" y="100" width="200" height="100" as="geometry" />
+        <mxCell id="dev" style="rounded=0;whiteSpace=wrap;fontSize=14;fillColor=none;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="20" y="200" width="180" height="110" as="geometry" />
         </mxCell>
 
         <!-- Prod Environment -->
-        <mxCell id="prod" value="Prod" style="rounded=0;whiteSpace=wrap;fontSize=14;fillColor=none;" vertex="1" connectable="0" parent="1">
-          <mxGeometry x="100" y="300" width="200" height="100" as="geometry" />
+        <mxCell id="prod" style="rounded=0;whiteSpace=wrap;fontSize=14;fillColor=none;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="20" y="350" width="180" height="110" as="geometry" />
         </mxCell>
 
         <!-- EKS Cluster for Dev -->
-        <mxCell id="eksDev" value="EKS Cluster (Dev)" style="shape=mxgraph.aws4.compute.compute_and_networking;fillColor=#D7F0E3;strokeColor=#232F3E;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="dev">
-          <mxGeometry x="200" y="140" width="120" height="60" as="geometry" />
+        <mxCell id="eksDev" style="shape=aws3.ecs;whiteSpace=wrap;html=1;" vertex="1" parent="dev">
+          <mxGeometry x="70" y="250" width="80" height="60" as="geometry" />
         </mxCell>
 
         <!-- EKS Cluster for Prod -->
-        <mxCell id="eksProd" value="EKS Cluster (Prod)" style="shape=mxgraph.aws4.compute.compute_and_networking;fillColor=#C1E1F0;strokeColor=#232F3E;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="prod">
-          <mxGeometry x="200" y="340" width="120" height="60" as="geometry" />
+        <mxCell id="eksProd" style="shape=aws3.ecs;whiteSpace=wrap;html=1;" vertex="1" parent="prod">
+          <mxGeometry x="70" y="400" width="80" height="60" as="geometry" />
         </mxCell>
 
         <!-- RDS PostgreSQL for Dev -->
-        <mxCell id="rdsPostgresDev" value="RDS PostgreSQL (Dev)" style="shape=mxgraph.aws4.database.rds;fillColor=#F0D7D7;strokeColor=#232F3E;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="dev">
-          <mxGeometry x="200" y="240" width="120" height="60" as="geometry" />
+        <mxCell id="rdsPostgresDev" style="shape=aws3.rds;whiteSpace=wrap;html=1;" vertex="1" parent="dev">
+          <mxGeometry x="70" y="300" width="80" height="60" as="geometry" />
         </mxCell>
 
         <!-- RDS PostgreSQL for Prod -->
-        <mxCell id="rdsPostgresProd" value="RDS PostgreSQL (Prod)" style="shape=mxgraph.aws4.database.rds;fillColor=#C6DFF0;strokeColor=#232F3E;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="prod">
-          <mxGeometry x="200" y="440" width="120" height="60" as="geometry" />
+        <mxCell id="rdsPostgresProd" style="shape=aws3.rds;whiteSpace=wrap;html=1;" vertex="1" parent="prod">
+          <mxGeometry x="70" y="450" width="80" height="60" as="geometry" />
         </mxCell>
 
         <!-- MSK for Dev -->
-        <mxCell id="mskDev" value="MSK (Dev)" style="shape=mxgraph.aws4.messaging.amazon_msk;fillColor=#F0E2C7;strokeColor=#232F3E;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="dev">
-          <mxGeometry x="350" y="140" width="120" height="60" as="geometry" />
+        <mxCell id="mskDev" style="shape=aws3.msk;whiteSpace=wrap;html=1;" vertex="1" parent="dev">
+          <mxGeometry x="220" y="250" width="80" height="60" as="geometry" />
         </mxCell>
 
         <!-- MSK for Prod -->
-        <mxCell id="mskProd" value="MSK (Prod)" style="shape=mxgraph.aws4.messaging.amazon_msk;fillColor=#D8E0F0;strokeColor=#232F3E;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="prod">
-          <mxGeometry x="350" y="340" width="120" height="60" as="geometry" />
+        <mxCell id="mskProd" style="shape=aws3.msk;whiteSpace=wrap;html=1;" vertex="1" parent="prod">
+          <mxGeometry x="220" y="400" width="80" height="60" as="geometry" />
         </mxCell>
 
         <!-- Elasticache for Dev -->
-        <mxCell id="elasticacheDev" value="Elasticache (Dev)" style="shape=mxgraph.aws4.database.amazon_elasticache;fillColor=#C7E1F0;strokeColor=#232F3E;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="dev">
-          <mxGeometry x="350" y="240" width="120" height="60" as="geometry" />
+        <mxCell id="elasticacheDev" style="shape=aws3.elasticache;whiteSpace=wrap;html=1;" vertex="1" parent="dev">
+          <mxGeometry x="220" y="300" width="80" height="60" as="geometry" />
         </mxCell>
 
         <!-- Elasticache for Prod -->
-        <mxCell id="elasticacheProd" value="Elasticache (Prod)" style="shape=mxgraph.aws4.database.amazon_elasticache;fillColor=#F0D8E2;strokeColor=#232F3E;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="prod">
-          <mxGeometry x="350" y="440" width="120" height="60" as="geometry" />
+        <mxCell id="elasticacheProd" style="shape=aws3.elasticache;whiteSpace=wrap;html=1;" vertex="1" parent="prod">
+          <mxGeometry x="220" y="450" width="80" height="60" as="geometry" />
         </mxCell>
 
         <!-- EC2 for Dev -->
-        <mxCell id="ec2Dev" value="EC2 (Dev)" style="shape=mxgraph.aws4.compute.amazon_ec2;fillColor=#F0E2C7;strokeColor=#232F3E;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="dev">
-          <mxGeometry x="500" y="140" width="120" height="60" as="geometry" />
+        <mxCell id="ec2Dev" style="shape=aws3.ec2;whiteSpace=wrap;html=1;" vertex="1" parent="dev">
+          <mxGeometry x="370" y="250" width="80" height="60" as="geometry" />
         </mxCell>
 
         <!-- EC2 for Prod -->
-        <mxCell id="ec2Prod" value="EC2 (Prod)" style="shape=mxgraph.aws4.compute.amazon_ec2;fillColor=#C7E1F0;strokeColor=#232F3E;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="prod">
-          <mxGeometry x="500" y="340" width="120" height="60" as="geometry" />
+        <mxCell id="ec2Prod" style="shape=aws3.ec2;whiteSpace=wrap;html=1;" vertex="1" parent="prod">
+          <mxGeometry x="370" y="400" width="80" height="60" as="geometry" />
         </mxCell>
 
         <!-- Connect resources -->
-        <mxCell id="edge1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=openThin;endFill=0;strokeColor=#545B64;strokeWidth=2;fontSize=14;" parent="1" source="eksDev" target="rdsPostgresDev">
+        <mxCell id="edge1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#545B64;strokeWidth=2;fontSize=14;" parent="1" source="eksDev" target="rdsPostgresDev">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
-        <mxCell id="edge2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=openThin;endFill=0;strokeColor=#545B64;strokeWidth=2;fontSize=14;" parent="1" source="eksProd" target="rdsPostgresProd">
+        <mxCell id="edge2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#545B64;strokeWidth=2;fontSize=14;" parent="1" source="eksProd" target="rdsPostgresProd">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
