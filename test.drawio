@@ -1,42 +1,80 @@
-<mxfile modified="2021-08-07T21:55:12.500Z" host="app.diagrams.net" agent="5.0 (X11; Linux aarch64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36" etag="i8WbBwLgFeJZxbZJsehJ" version="14.9.5" type="github">
-  <diagram id="Ht1M8jgEwFfnCIfOTk4-" name="AWS Infrastructure">
-    <mxGraphModel dx="1350" dy="769" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+<mxfile modified="2023-11-06T00:00:00Z" host="app.diagrams.net" agent="5.0 (Windows)" etag="EKWBnUcJqBbI9ClNqXlZ" version="10.0" type="device">
+  <diagram id="8Mc4_-ir8PuhkJFzITf9" name="AWS Infrastructure">
+    <mxGraphModel dx="1100" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="awsCloud" value="AWS Cloud" style="shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;strokeColor=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;" vertex="1">
-          <mxGeometry x="263" y="125" width="1097" height="757" as="geometry" />
+        
+        <!-- Dev Environment -->
+        <mxCell id="dev" value="Dev" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;opacity=30;strokeWidth=2;align=left;verticalAlign=middle;rounded=0;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="20" y="20" width="220" height="80" as="geometry" />
         </mxCell>
-        <!-- Create separate groups for dev and prod -->
-        <mxCell id="devGroup" value="Dev" style="rounded=0;whiteSpace=wrap;fontSize=14;fillColor=none;" vertex="1" connectable="0" parent="awsCloud">
-          <mxGeometry x="140" y="10" width="400" height="40" as="geometry" />
+        
+        <!-- Prod Environment -->
+        <mxCell id="prod" value="Prod" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;opacity=30;strokeWidth=2;align=left;verticalAlign=middle;rounded=0;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="20" y="120" width="220" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="prodGroup" value="Prod" style="rounded=0;whiteSpace=wrap;fontSize=14;fillColor=none;" vertex="1" connectable="0" parent="awsCloud">
-          <mxGeometry x="140" y="70" width="400" height="40" as="geometry" />
+
+        <!-- EKS Cluster for Dev -->
+        <mxCell id="eksDev" value="EKS Cluster (Dev)" style="shape=mxgraph.aws4.compute.amazon_ecs;whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="dev">
+          <mxGeometry x="20" y="10" width="160" height="40" as="geometry" />
         </mxCell>
-        <!-- Add resources for Dev -->
-        <mxCell id="eksDev" value="EKS Cluster" style="shape=mxgraph.aws4.compute.compute_and_networking;strokeColor=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;" vertex="1" parent="devGroup">
-          <mxGeometry x="140" y="60" width="160" height="40" as="geometry" />
+
+        <!-- EKS Cluster for Prod -->
+        <mxCell id="eksProd" value="EKS Cluster (Prod)" style="shape=mxgraph.aws4.compute.amazon_ecs;whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="prod">
+          <mxGeometry x="20" y="10" width="160" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="rdsDev" value="RDS (Dev)" style="shape=mxgraph.aws4.database.rds;strokeColor=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;" vertex="1" parent="devGroup">
-          <mxGeometry x="140" y="120" width="160" height="40" as="geometry" />
+
+        <!-- RDS PostgreSQL for Dev -->
+        <mxCell id="rdsPostgresDev" value="RDS PostgreSQL (Dev)" style="shape=mxgraph.aws4.database.amazon_rds;whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="dev">
+          <mxGeometry x="20" y="60" width="160" height="40" as="geometry" />
         </mxCell>
-        <!-- Add resources for Prod -->
-        <mxCell id="eksProd" value="EKS Cluster" style="shape=mxgraph.aws4.compute.compute_and_networking;strokeColor=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;" vertex="1" parent="prodGroup">
-          <mxGeometry x="140" y="60" width="160" height="40" as="geometry" />
+
+        <!-- RDS PostgreSQL for Prod -->
+        <mxCell id="rdsPostgresProd" value="RDS PostgreSQL (Prod)" style="shape=mxgraph.aws4.database.amazon_rds;whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="prod">
+          <mxGeometry x="20" y="60" width="160" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="rdsProd" value="RDS (Prod)" style="shape=mxgraph.aws4.database.rds;strokeColor=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;" vertex="1" parent="prodGroup">
-          <mxGeometry x="140" y="120" width="160" height="40" as="geometry" />
+
+        <!-- MSK for Dev -->
+        <mxCell id="mskDev" value="MSK (Dev)" style="shape=mxgraph.aws4.messaging.amazon_msk;whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="dev">
+          <mxGeometry x="20" y="110" width="160" height="40" as="geometry" />
         </mxCell>
-        <!-- Add more resources (MSK, Elasticache, EC2) as needed in a similar manner -->
-        <!-- Connect resources using edges -->
-        <mxCell id="edge1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#545B64;strokeWidth=2;fontSize=14;" parent="awsCloud" source="eksDev" target="rdsDev">
+
+        <!-- MSK for Prod -->
+        <mxCell id="mskProd" value="MSK (Prod)" style="shape=mxgraph.aws4.messaging.amazon_msk;whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="prod">
+          <mxGeometry x="20" y="110" width="160" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Elasticache for Dev -->
+        <mxCell id="elasticacheDev" value="Elasticache (Dev)" style="shape=mxgraph.aws4.database.amazon_elasticache;whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="dev">
+          <mxGeometry x="20" y="160" width="160" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Elasticache for Prod -->
+        <mxCell id="elasticacheProd" value="Elasticache (Prod)" style="shape=mxgraph.aws4.database.amazon_elasticache;whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="prod">
+          <mxGeometry x="20" y="160" width="160" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- EC2 for Dev -->
+        <mxCell id="ec2Dev" value="EC2 (Dev)" style="shape=mxgraph.aws4.compute.amazon_ec2;whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="dev">
+          <mxGeometry x="20" y="210" width="160" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- EC2 for Prod -->
+        <mxCell id="ec2Prod" value="EC2 (Prod)" style="shape=mxgraph.aws4.compute.amazon_ec2;whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="prod">
+          <mxGeometry x="20" y="210" width="160" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Connect resources -->
+        <mxCell id="edge1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#545B64;strokeWidth=2;fontSize=14;" parent="1" source="eksDev" target="rdsPostgresDev">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="edge2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#545B64;strokeWidth=2;fontSize=14;" parent="awsCloud" source="eksProd" target="rdsProd">
+
+        <mxCell id="edge2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#545B64;strokeWidth=2;fontSize=14;" parent="1" source="eksProd" target="rdsPostgresProd">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <!-- Add more edges to connect resources -->
+
+        <!-- Add more edges to connect resources as needed -->
       </root>
     </mxGraphModel>
   </diagram>
