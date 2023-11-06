@@ -67,4 +67,15 @@
 
         <!-- Connect resources -->
         <mxCell id="edge1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=openThin;endFill=0;strokeColor=#545B64;strokeWidth=2;fontSize=14;" parent="1" source="eksDev" target="rdsPostgresDev">
-          <mxGeometry relative="1
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=openThin;endFill=0;strokeColor=#545B64;strokeWidth=2;fontSize=14;" parent="1" source="eksProd" target="rdsPostgresProd">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Add more edges to connect resources as needed -->
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
