@@ -1,59 +1,43 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mxfile userAgent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36" version="13.9.2" type="device">
-  <diagram id="UshRA_-BVKMZCfFQsEYs">
-    <mxGraphModel dx="1128" dy="481" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+<mxfile modified="2021-08-07T21:55:12.500Z" host="app.diagrams.net" agent="5.0 (X11; Linux aarch64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36" etag="i8WbBwLgFeJZxbZJsehJ" version="14.9.5" type="github">
+  <diagram id="Ht1M8jgEwFfnCIfOTk4-" name="AWS Infrastructure">
+    <mxGraphModel dx="1350" dy="769" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="4ac1f1bc-bc11-7f6d-cf36-3f4bde3944f7" value="" style="group" vertex="1" connectable="0" vertexLabels="1" edges="1" collapsed="0" connect="0" id="2">
-          <mxGeometry x="180" y="100" width="100" height="40" as="geometry" />
+        <mxCell id="awsCloud" value="AWS Cloud" style="shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;strokeColor=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;" vertex="1">
+          <mxGeometry x="263" y="125" width="1097" height="757" as="geometry" />
         </mxCell>
-        <mxCell id="4ac1f1bc-bc11-7f6d-cf36-3f4bde3944f7" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" connectable="0" connect="0" id="3">
-          <mxGeometry width="160" height="70" as="geometry" />
+        <!-- Create separate groups for dev and prod -->
+        <mxCell id="devGroup" value="Dev" style="rounded=0;whiteSpace=wrap;fontSize=14;fillColor=none;" vertex="1" connectable="0" parent="awsCloud">
+          <mxGeometry x="140" y="10" width="400" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="a" value="AWS Cloud" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" connectable="0" id="4">
-          <mxGeometry width="160" height="40" as="geometry" />
+        <mxCell id="prodGroup" value="Prod" style="rounded=0;whiteSpace=wrap;fontSize=14;fillColor=none;" vertex="1" connectable="0" parent="awsCloud">
+          <mxGeometry x="140" y="70" width="400" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="5" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" connectable="0" connect="0" id="6">
-          <mxGeometry width="160" height="70" as="geometry" />
+        <!-- Add resources for Dev -->
+        <mxCell id="eksDev" value="EKS Cluster" style="shape=mxgraph.aws4.compute.compute_and_networking;strokeColor=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;" vertex="1" parent="devGroup">
+          <mxGeometry x="140" y="60" width="160" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="4ac1f1bc-bc11-7f6d-cf36-3f4bde3944f7" value="EKS Dev" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" connectable="0" connect="0" id="7">
-          <mxGeometry width="160" height="60" as="geometry" />
+        <mxCell id="rdsDev" value="RDS (Dev)" style="shape=mxgraph.aws4.database.rds;strokeColor=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;" vertex="1" parent="devGroup">
+          <mxGeometry x="140" y="120" width="160" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="4ac1f1bc-bc11-7f6d-cf36-3f4bde3944f7" value="EKS Prod" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" connectable="0" connect="0" id="8">
-          <mxGeometry width="160" height="60" as="geometry" />
+        <!-- Add resources for Prod -->
+        <mxCell id="eksProd" value="EKS Cluster" style="shape=mxgraph.aws4.compute.compute_and_networking;strokeColor=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;" vertex="1" parent="prodGroup">
+          <mxGeometry x="140" y="60" width="160" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="4ac1f1bc-bc11-7f6d-cf36-3f4bde3944f7" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" connectable="0" connect="0" id="9">
-          <mxGeometry width="160" height="60" as="geometry" />
+        <mxCell id="rdsProd" value="RDS (Prod)" style="shape=mxgraph.aws4.database.rds;strokeColor=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;" vertex="1" parent="prodGroup">
+          <mxGeometry x="140" y="120" width="160" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="4ac1f1bc-bc11-7f6d-cf36-3f4bde3944f7" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" connectable="0" connect="0" id="10">
-          <mxGeometry width="160" height="60" as="geometry" />
+        <!-- Add more resources (MSK, Elasticache, EC2) as needed in a similar manner -->
+        <!-- Connect resources using edges -->
+        <mxCell id="edge1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#545B64;strokeWidth=2;fontSize=14;" parent="awsCloud" source="eksDev" target="rdsDev">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="12" value="EC2 Dev" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" connectable="0" id="11">
-          <mxGeometry width="160" height="60" as="geometry" />
+        <mxCell id="edge2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#545B64;strokeWidth=2;fontSize=14;" parent="awsCloud" source="eksProd" target="rdsProd">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="13" value="EC2 Prod" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" connectable="0" id="12">
-          <mxGeometry width="160" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="15" value="RDS Dev" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" connectable="0" id="13">
-          <mxGeometry width="160" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="16" value="RDS Prod" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" connectable="0" id="14">
-          <mxGeometry width="160" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="18" value="MSK Dev" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" connectable="0" id="15">
-          <mxGeometry width="160" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="19" value="MSK Prod" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" connectable="0" id="16">
-          <mxGeometry width="160" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="21" value="Elasticache Dev" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" connectable="0" id="17">
-          <mxGeometry width="160" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="22" value="Elasticache Prod" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" connectable="0" id="18">
-          <mxGeometry width="160" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="20" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" connectable="0" id="19">
-          <mxGeometry width="160" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="20" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" connect
+        <!-- Add more edges to connect resources -->
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
