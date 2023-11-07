@@ -1,6 +1,14 @@
-<mxfile host="app.diagrams.net" modified="2023-11-06T10:09:49.683Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.76" version="22.0.8" etag="KOkg6OFEXkYFJhSm8WAC" type="github">
-  <diagram name="Страница — 1" id="1OsnL1P3q5gQ_nWTbh-I">
-    <mxGraphModel>
+<mxfile host="app.diagrams.net" modified="2023-11-07T06:11:30.999Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0" etag="CEfQj4vwhNnuzro09WJc" version="22.0.8" type="github" pages="2">
+  <diagram name="Dev" id="1OsnL1P3q5gQ_nWTbh-I">
+    <mxGraphModel dx="1972" dy="934" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="eFoyOgodPTVo4KovjnKP" name="Prod">
+    <mxGraphModel dx="986" dy="467" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
